@@ -1,8 +1,8 @@
-import React, { Fragment} from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Routes
-import Header from "./Components/Navbar/Header"
+import Header from "./Components/Navbar/Header";
 import Landing from "./Components/Layout/Landing";
 import Routes from "./Routing/Routes";
 
