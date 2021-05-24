@@ -4,6 +4,8 @@ import Register from "../Components/Auth/Register";
 import Login from "../Components/Auth/Login";
 import PrivateRouter from "./PrivateRoute"
 import Home from "../Components/Home"
+import EditScreen from "../Components/EditPost"
+import Footer from "../Components/Footer/Footer"
 
 
 const Routes = () => {
@@ -14,11 +16,13 @@ const Routes = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <PrivateRouter exact path="/posts" component={Home} />
-       
+        <Route path='/post/:id/edit' component={EditScreen} />
 
        
       </Switch>
+      
     </section>
+   
   );
 };
 

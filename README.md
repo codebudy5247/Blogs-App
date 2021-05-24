@@ -1,6 +1,6 @@
 # Blog App
 
->  Full stack MERN Blog App with React ,React-redux with   hooks,JWT authentication.## Demo
+>  Full stack MERN Blog App with React ,React-redux with   hooks,JWT authentication.
 
 ## Demo
 

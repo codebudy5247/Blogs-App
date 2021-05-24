@@ -1,4 +1,5 @@
 import axios from "axios";
+import authHeader from "./auth-header";
 import {
   POST_LIST_REQUEST,
   POST_LIST_SUCCESS,
@@ -12,7 +13,7 @@ import {
   POST_UPDATE_REQUEST,
   POST_UPDATE_SUCCESS,
   POST_UPDATE_FAIL,
-  POST_UPDATE_RESET
+  POST_UPDATE_RESET,
 } from "./types.action";
 
 export const getPosts = () => async (dispatch) => {
@@ -40,14 +41,16 @@ export const getPosts = () => async (dispatch) => {
 
 export const getPost = (id) => async (dispatch) => {
   try {
-    dispatch({ type: POST_DETAILS_REQUEST })
+    dispatch({ type: POST_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`https://blogs-app-api.herokuapp.com/posts/${id}`)
-    console.log(data)
+    const { data } = await axios.get(
+      `https://blogs-app-api.herokuapp.com/posts/${id}`
+    );
+    console.log(data);
     dispatch({
       type: POST_DETAILS_SUCCESS,
       payload: data,
-    })
+    });
   } catch (error) {
     dispatch({
       type: POST_DETAILS_FAIL,
@@ -55,17 +58,21 @@ export const getPost = (id) => async (dispatch) => {
         error.response && error.response.data.message
           ? error.response.data.message
           : error.message,
-    })
+    });
   }
-}
-export const AddPost = () => async (dispatch) => {
+};
+export const AddPost = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: POST_CREATE_REQUEST,
     });
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
       },
     };
     const { data } = await axios.post(
@@ -93,7 +100,7 @@ export const AddPost = () => async (dispatch) => {
   }
 };
 
-export const updatePost = (post) => async (dispatch,history) => {
+export const updatePost = (post) => async (dispatch, history) => {
   try {
     dispatch({
       type: POST_UPDATE_REQUEST,
@@ -112,18 +119,17 @@ export const updatePost = (post) => async (dispatch,history) => {
     dispatch({
       type: POST_UPDATE_SUCCESS,
       payload: data,
-    })
+    });
     history.push(`post/${post._id}`);
   } catch (error) {
     console.log(error);
     const message =
       error.response && error.response.data.message
         ? error.response.data.message
-        : error.message
+        : error.message;
     dispatch({
       type: POST_UPDATE_FAIL,
       payload: message,
-    })
+    });
   }
-  }
-
+};

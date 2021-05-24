@@ -16,16 +16,13 @@ const Post = ({ post }) => {
             </h4>
            
             <div className="card-subtitle  mb-2">
-            <strong>{post.tags.map((tag) => `#${tag} `)}</strong>
+            <strong>{post.tags.map((tag) => `${tag} `)}</strong>
             </div>
-            <div className="card-text mb-2">{post.message}</div>
+            <div className="card-text mb-2">
+            {post.message}
+            </div>
            
-            <button type="submit" className="btn btn-danger">
-              Update
-            </button>
-            <button type="submit" className="btn btn-danger">
-            Delete
-          </button>
+            
           <Link to={`/post/${post._id}`}>
           <button type="button" className="btn btn-info disabled">
             Read More

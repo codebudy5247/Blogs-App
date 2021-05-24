@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Components/Navbar/Header";
 import Landing from "./Components/Layout/Landing";
 import Routes from "./Routing/Routes";
+import Footer from "./Components/Footer/Footer"
 
 import "./App.css";
 
@@ -13,15 +14,15 @@ const App = () => {
     <Router>
       <Fragment>
         <input type="checkbox" id="theme" />
-        <div className="App">
-          <div className="main">
+        
             <Header />
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route component={Routes} />
             </Switch>
-          </div>
-        </div>
+          
+          
+       
       </Fragment>
     </Router>
   );

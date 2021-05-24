@@ -27,7 +27,7 @@ const Home = ({ history }) => {
     dispatch({ type: POST_CREATE_RESET });
 
     if (successCreate) {
-      history.push(`/post`);
+      history.push(`/post/${createdPost._id}/edit`);
     }
 
     dispatch(getPosts());
