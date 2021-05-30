@@ -24,6 +24,7 @@ const App = () => {
           
        
       </Fragment>
+      <Footer />
     </Router>
   );
 };
