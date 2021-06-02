@@ -13,8 +13,6 @@ const App = () => {
   return (
     <Router>
       <Fragment>
-        <input type="checkbox" id="theme" />
-        
             <Header />
             <Switch>
               <Route exact path="/" component={Landing} />

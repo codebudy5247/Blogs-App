@@ -38,19 +38,17 @@ const Home = ({ history }) => {
   };
   return (
     <>
-      <div className="heading-container">
+      {/*<div className="heading-container">
         <i class="bi bi-three-dots"></i>
         <h1>
           <small> My Feeds</small>
         </h1>
-      </div>
-      <Row>
-        <Col>
+  </div>*/}
+     
           <Button className="my-3" onClick={createPostHandler}>
             <CreateIcon /> Write
           </Button>
-        </Col>
-      </Row>
+       
       {loadingCreate && <Loader />}
       {errorCreate && <Message variant="danger">{errorCreate}</Message>}
 
@@ -60,13 +58,15 @@ const Home = ({ history }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
-          <Col>
-            {posts.map((post) => (
-              <Row key={post._id}>
-                <Post post={post} />
-              </Row>
-            ))}
-          </Col>
+         <div className="posts">
+         {posts.map((post) => (
+          <div key={post._id}>
+            <Post post={post} />
+          </div>
+        ))}
+         </div>
+            
+          
         </>
       )}
     </>

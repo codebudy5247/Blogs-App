@@ -8,8 +8,7 @@ import decode from "jwt-decode";
 import PersonIcon from "@material-ui/icons/Person";
 import PostAddIcon from "@material-ui/icons/PostAdd";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import Brightness4SharpIcon from '@material-ui/icons/Brightness4Sharp';
-
+import Brightness4SharpIcon from "@material-ui/icons/Brightness4Sharp";
 
 import { logout } from "../../Redux/Actions/auth.action";
 const Header = () => {
@@ -58,31 +57,27 @@ const Header = () => {
         <Toolbar className={classes.toolbar}>
           {user?.result ? (
             <>
-           
               <div>
                 <Link to="/posts">
                   <PostAddIcon fontSize="large" />
+                  <span>Blogs</span> 
                 </Link>
               </div>
               <div>
                 <Link to={`/profile/${user.result._id}`}>
                   <PersonIcon fontSize="large" />
+                   <span>{user.result.name}</span> 
                 </Link>
               </div>
-              
-              <Button
-                variant="contained"
-                className={classes.logout}
-                color="secondary"
-                onClick={logoutHandler}
-              >
+
+              <div >
+              <Button onClick={logoutHandler}>
                 <ExitToAppIcon fontSize="large" />
+                 <span> Logout</span>
               </Button>
-              <div>
-                <label htmlFor="theme" >
-                <Brightness4SharpIcon fontSize="large" />
-                </label>
-            </div>
+              </div>
+
+              
             </>
           ) : (
             <>

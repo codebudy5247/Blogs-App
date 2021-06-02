@@ -10,7 +10,7 @@ import thunk from "redux-thunk";
 
 import { reducers } from "./Redux/Reducers";
 import App from "./App";
-import "./index.css";
+
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
