@@ -4,7 +4,7 @@ import "./sidebar.css";
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      <div className="sidebarItem">
+      {/*<div className="sidebarItem">
         <span className="sidebarTitle">CONTACT US</span>
         <img
           src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg"
@@ -14,7 +14,7 @@ export default function Sidebar() {
           Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
           amet ex esse.Sunt eu ut nostrud id quis proident.
         </p>
-      </div>
+  </div>*/}
       <div className="sidebarItem">
         <span className="sidebarTitle">POPULAR TAGS</span>
         <ul className="sidebarList">
@@ -50,7 +50,7 @@ export default function Sidebar() {
           </li>
         </ul>
       </div>
-      <div className="sidebarItem">
+      {/*<div className="sidebarItem">
         <span className="sidebarTitle">FOLLOW US</span>
         <div className="sidebarSocial">
           <i className="sidebarIcon fab fa-facebook-square"></i>
@@ -58,7 +58,7 @@ export default function Sidebar() {
           <i className="sidebarIcon fab fa-pinterest-square"></i>
           <i className="sidebarIcon fab fa-twitter-square"></i>
         </div>
-      </div>
+  </div>*/}
     </div>
   );
 }

@@ -39,9 +39,9 @@ const EditPost = () => {
               placeholder="Tell Your Story..... <HTML Syntax>"
             ></Form.Control>
           </Form.Group>
-
-          <Button type="submit" variant="primary">
-            Update
+      
+          <Button type="submit" className="btn btn-outline-primary">
+            PUBLISH
           </Button>
         </Form>
       </FormContainer>

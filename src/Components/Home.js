@@ -6,7 +6,7 @@ import Post from "../Components/Post";
 import Message from "../Components/Message";
 import Loader from "../Components/Loader/Loader";
 import Sidebar from "../Components/Sidebar/Sidebar";
-import Topbar from "../Components/Topbar"
+import Topbar from "../Components/Topbar";
 import { getPosts, AddPost } from "../Redux/Actions/post.action";
 import { POST_CREATE_RESET } from "../Redux/Actions/types.action";
 
@@ -40,38 +40,37 @@ const Home = ({ history }) => {
   };
   return (
     <>
-    <Topbar />
+      <Topbar />
       {/*<div className="heading-container">
         <i class="bi bi-three-dots"></i>
         <h1>
           <small> My Feeds</small>
         </h1>
   </div>*/}
-    
-        <Button className="my-3" onClick={createPostHandler}>
+      <Col className="text-left">
+        <Button className="btn btn-outline-success" onClick={createPostHandler}>
           <CreateIcon /> Write
         </Button>
+      </Col>
+      {loadingCreate && <Loader />}
+      {errorCreate && <Message variant="danger">{errorCreate}</Message>}
 
-        {loadingCreate && <Loader />}
-        {errorCreate && <Message variant="danger">{errorCreate}</Message>}
-
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
-          <>
-            <div className="posts">
-              {posts.map((post) => (
-                <div key={post._id}>
-                  <Post post={post} />
-                </div>
-              ))}
-            </div>
-          </>
-        )}
-        <Sidebar /> 
-     
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant="danger">{error}</Message>
+      ) : (
+        <>
+          <div className="posts">
+            {posts.map((post) => (
+              <div key={post._id}>
+                <Post post={post} />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+      <Sidebar />
     </>
   );
 };

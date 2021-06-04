@@ -3,7 +3,7 @@ export default function Header() {
       <div className="header">
         <div className="headerTitles">
          
-          <span className="headerTitleLg">Share Your Knowledge</span>
+          {/*<span className="headerTitleLg">Share Your Knowledge</span>*/}
         </div>
         <img
           className="headerImg"

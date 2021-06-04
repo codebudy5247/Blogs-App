@@ -26,7 +26,7 @@ const Post = ({ post }) => {
         </div>
   </div>*/}
   <div className="post">
-  <img className="postImg" src="https://assets.entrepreneur.com/content/3x2/2000/20200218153611-instagram.jpeg" alt="" />
+  <img className="postImg" src="https://res.cloudinary.com/practicaldev/image/fetch/s--KCRN0Wuf--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/356/ceb8dc0f-a77b-4f89-84da-52216a4286e1.png" alt="" />
   <div className="postInfo">
     <div className="postCats">
     {post.tags.map((tag) => `${tag} `)}
