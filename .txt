@@ -1,1 +1,17 @@
 https://blogs-app-api.herokuapp.com/
+
+
+POST Data
+
+{
+  "tags": [
+    "[sample tag,tag1]"
+  ],
+  "createdAt": "2021-05-18T22:12:56.127Z",
+  "_id": "60a43be83e079611c80be420",
+  "title": "Sample name",
+  "message": "<h1>Heading</h1><p>This is body</p>",
+  "selectedFile": "/images/post.jpg",
+  "sanitizedHtml": "<h1>Heading</h1><p>This is body</p>",
+  "__v": 0
+}

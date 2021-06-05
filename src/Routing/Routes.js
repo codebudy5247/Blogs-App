@@ -5,7 +5,7 @@ import Login from "../Components/Auth/Login";
 import PrivateRouter from "./PrivateRoute"
 import Home from "../Components/Home"
 import EditScreen from "../Components/EditPost"
-import Footer from "../Components/Footer/Footer"
+import PostDeatails from "../Components/POST/PostDetails"
 
 
 const Routes = () => {
@@ -16,6 +16,7 @@ const Routes = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <PrivateRouter exact path="/posts" component={Home} />
+        <Route path='/post/:id' component={PostDeatails} />
         <Route path='/post/:id/edit' component={EditScreen} />
 
        
