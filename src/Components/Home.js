@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Button } from "react-bootstrap";
 import CreateIcon from "@material-ui/icons/Create";
-import Post from "../Components/Post";
+import Post from "../Components/POST/Post";
 import Message from "../Components/Message";
 import Loader from "../Components/Loader/Loader";
 import Sidebar from "../Components/Sidebar/Sidebar";
@@ -40,6 +40,7 @@ const Home = ({ history }) => {
   };
   return (
     <>
+    
       <Topbar />
       {/*<div className="heading-container">
         <i class="bi bi-three-dots"></i>
@@ -61,6 +62,7 @@ const Home = ({ history }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+        
           <div className="posts">
             {posts.map((post) => (
               <div key={post._id}>
@@ -68,9 +70,11 @@ const Home = ({ history }) => {
               </div>
             ))}
           </div>
+          
         </>
       )}
       <Sidebar />
+      
     </>
   );
 };

@@ -7,11 +7,25 @@ POST Data
   "tags": [
     "[sample tag,tag1]"
   ],
-  "createdAt": "2021-05-18T22:12:56.127Z",
-  "_id": "60a43be83e079611c80be420",
+  "createdAt": "2021-06-05T17:18:46.786Z",
+  "_id": "60bbb1f6112269601f7ce920",
   "title": "Sample name",
-  "message": "<h1>Heading</h1><p>This is body</p>",
+  "message": "<p>Tell Your Story HTML Syntax</p>",
+  "user": {
+    "avatar": "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png",
+    "bio": "",
+    "website": "",
+    "followers": [],
+    "followings": [],
+    "saved": [],
+    "_id": "60bb63f363d3b31f85fff07a",
+    "email": "user9@example.com",
+    "name": "user9",
+    "createdAt": "2021-06-05T11:45:55.032Z",
+    "updatedAt": "2021-06-05T11:45:55.032Z",
+    "__v": 0
+  },
   "selectedFile": "/images/post.jpg",
-  "sanitizedHtml": "<h1>Heading</h1><p>This is body</p>",
+  "sanitizedHtml": "<p>Tell Your Story HTML Syntax</p>",
   "__v": 0
 }

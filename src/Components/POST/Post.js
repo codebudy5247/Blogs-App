@@ -1,15 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Sanitized from "../Components/POST/Sanitized"
+import Sanitized from "./Sanitized"
+import CardHeader from "./PostHeader"
 
 const Post = ({ post }) => {
   return (
     <>
-
+    
+   
       <div className="post">
-        <span className="postDate">
+      
+      <CardHeader post={post} />
+      
+        {/*<span className="postDate">
           {new Date(post.createdAt).toDateString()}
-        </span>
+  </span>*/}
         <Link to={`/post/${post._id}`} className="link">
           <img className="postImg" src="https://res.cloudinary.com/practicaldev/image/fetch/s--KCRN0Wuf--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/356/ceb8dc0f-a77b-4f89-84da-52216a4286e1.png" alt="" />
         </Link>
@@ -27,6 +32,8 @@ const Post = ({ post }) => {
           <Sanitized html={post.message} />
         </p>
       </div>
+      
+      
 
     </>
   );

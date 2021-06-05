@@ -3,6 +3,10 @@ import { combineReducers } from "redux";
 import { userLoginReducer, userRegisterReducer } from "./auth.reducer";
 
 import {
+  themeReducer
+} from "./theme.reducer"
+
+import {
   postListReducer,
   postDetailsReducer,
   postCreateReducer,
@@ -10,6 +14,7 @@ import {
 } from "./post.reducer";
 
 export const reducers = combineReducers({
+  theme:themeReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   postList: postListReducer,

@@ -5,8 +5,10 @@ import { useDispatch } from "react-redux";
 import { AppBar, Typography, Toolbar, Button } from "@material-ui/core";
 import useStyles from "./style";
 import decode from "jwt-decode";
+import HomeIcon from '@material-ui/icons/Home';
 import PersonIcon from "@material-ui/icons/Person";
 import PostAddIcon from "@material-ui/icons/PostAdd";
+import BookOutlinedIcon from '@material-ui/icons/BookOutlined';
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Brightness4SharpIcon from "@material-ui/icons/Brightness4Sharp";
 
@@ -44,22 +46,23 @@ const Header = () => {
           <Typography className={classes.heading} variant="h2" align="center">
             Blogs{" "}
           </Typography>
+         
 
-          {/* <LinkContainer to="/jobs">
-              <Nav.Link>
-                <button type="button" class="btn btn-primary btn-sm">
-                  Jobs
-                </button>
-              </Nav.Link>
-</LinkContainer>*/}
         </div>
+       
 
         <Toolbar className={classes.toolbar}>
           {user?.result ? (
             <>
+            <div>
+                <Link to="/">
+                  <HomeIcon fontSize="large" />
+                  <span>Home</span> 
+                </Link>
+              </div>
               <div>
                 <Link to="/posts">
-                  <PostAddIcon fontSize="large" />
+                  <BookOutlinedIcon fontSize="large" />
                   <span>Blogs</span> 
                 </Link>
               </div>
@@ -73,7 +76,7 @@ const Header = () => {
               <div >
               <Button onClick={logoutHandler}>
                 <ExitToAppIcon fontSize="large" />
-                 <span> Logout</span>
+                 <span></span>
               </Button>
               </div>
 
@@ -89,13 +92,18 @@ const Header = () => {
             >
           <LockOpenSharpIcon fontSize="large" />
               </Button>*/}
-              <Typography
-                className={classes.heading}
-                variant="h6"
-                align="center"
-              >
-                A Place to share your Knowledge.{" "}
-              </Typography>
+              <div>
+              <Link to="/">
+                <HomeIcon fontSize="large" />
+                <span>HOME</span> 
+              </Link>
+            </div>
+            <div>
+                <Link to="/posts">
+                  <BookOutlinedIcon fontSize="large" />
+                  <span>BLOGS</span> 
+                </Link>
+              </div>
             </>
           )}
         </Toolbar>

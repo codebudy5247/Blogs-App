@@ -56,16 +56,6 @@ a {
   text-decoration: none;
 }
 
-/* Utilities */
-/* .container {
-  max-width: 1100px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
-} */
-
 .badge {
   font-size: 0.8rem;
   padding: 0.1rem;
@@ -116,10 +106,6 @@ button {
   font: inherit;
 }
 
-/* .navbar ul {
-  display: flex;
-} */
-
 /* Landing Page */
 .landing {
   position: relative;
@@ -140,6 +126,54 @@ button {
   text-align: center;
 }
 
+/* Avatar */
+
+.supper-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.big-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.medium-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.small-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.posts .card{
+  box-shadow: 0 0 4px #ddd;
+}
+/* --------- Post Card Header --------- */
+.posts .card_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 15px 25px;
+}
+.posts .card_header .card_name{
+  transform: translateY(3px);
+}
+.posts .card_header .dropdown-menu{
+  position: absolute;
+  right: 0;
+  left: inherit;
+}
+.posts .card_header .dropdown-item{
+  display: flex;
+  margin: 5px 0;
+}
 /*  Posts*/
 .post {
   width: 300px;
@@ -151,7 +185,7 @@ button {
 
 .postImg {
   width: 100%;
-  height: 280px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -183,7 +217,7 @@ button {
 }
 
 .postDesc {
-  font-style: italic;
+  font-family: "Varela Round", sans-serif;
   font-size: 20px;
   color: #444;
   line-height: 24px;
@@ -191,6 +225,9 @@ button {
   text-overflow: ellipsis;
   margin-top: 0px;
   text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   
 }
 
