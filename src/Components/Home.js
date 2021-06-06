@@ -25,14 +25,24 @@ const Home = ({ history }) => {
     post: createdPost,
   } = postCreate;
 
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
   useEffect(() => {
     dispatch({ type: POST_CREATE_RESET });
 
+
+
     if (successCreate) {
       history.push(`/post/${createdPost._id}/edit`);
+    } else {
+      dispatch(getPosts());
     }
 
-    dispatch(getPosts());
+
+
+
+
   }, [dispatch, history, successCreate, createdPost]);
 
   const createPostHandler = () => {
@@ -40,16 +50,16 @@ const Home = ({ history }) => {
   };
   return (
     <>
-    
-      <Topbar />
-      {/*<div className="heading-container">
+
+      {/*<Topbar />
+      <div className="heading-container">
         <i class="bi bi-three-dots"></i>
         <h1>
           <small> My Feeds</small>
         </h1>
   </div>*/}
       <Col className="text-left">
-        <Button className="btn btn-outline-success" onClick={createPostHandler}>
+        <Button className="btn-write" onClick={createPostHandler}>
           <CreateIcon /> Write
         </Button>
       </Col>
@@ -62,7 +72,7 @@ const Home = ({ history }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
-        
+
           <div className="posts">
             {posts.map((post) => (
               <div key={post._id}>
@@ -70,11 +80,11 @@ const Home = ({ history }) => {
               </div>
             ))}
           </div>
-          
+
         </>
       )}
       <Sidebar />
-      
+
     </>
   );
 };

@@ -99,18 +99,23 @@ export const AddPost = () => async (dispatch, getState) => {
   }
 };
 
-export const updatePost = (post) => async (dispatch, history) => {
+export const updatePost = (post) => async (dispatch, getState) => {
   try {
     dispatch({
       type: POST_UPDATE_REQUEST,
     });
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
       },
     };
     console.log(post._id, "working");
-    const { data } = await axios.patch(
+
+    const { data } = await axios.put(
       `https://blogs-app-api.herokuapp.com/posts/${post._id}`,
       post,
       config
@@ -119,7 +124,8 @@ export const updatePost = (post) => async (dispatch, history) => {
       type: POST_UPDATE_SUCCESS,
       payload: data,
     });
-    history.push(`post/${post._id}`);
+    dispatch({ type: POST_DETAILS_SUCCESS, payload: data })
+    //history.push(`post/${post._id}`);
   } catch (error) {
     console.log(error);
     const message =

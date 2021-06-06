@@ -29,3 +29,9 @@ POST Data
   "sanitizedHtml": "<p>Tell Your Story HTML Syntax</p>",
   "__v": 0
 }
+
+
+title - title
+tags  - tags
+image - selectedFile
+write - message

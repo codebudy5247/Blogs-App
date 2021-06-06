@@ -11,34 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* * {
-  color: black;
-  padding: 0;
-  box-sizing: border-box;
-  margin: 0;
- 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-   --primary-color: #17a2b8;
-  --dark-color: #343a40;
-  --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745; 
-} */
-/* @media print { 
-  html, body {
-     display: none; 
-  }
-} */
 
 .social-icons {
   margin-left: 20px;
   margin-right: 20px;
 }
+
+/* Typography  */
 h1 {
   text-align: center;
   margin-top: 20px;
 }
+
+
 .getstart {
   font-weight: bold;
   color: #f9f9f9;
@@ -56,27 +41,18 @@ a {
   text-decoration: none;
 }
 
-.badge {
-  font-size: 0.8rem;
-  padding: 0.1rem;
-  text-align: center;
-  margin: 0.3rem;
-  background: var(--light-color);
-  color: #333;
-}
-
+/* BUTTONS */
 .btn:hover {
   opacity: 0.8;
+  background-color: black;
+  color: whitesmoke;
+} 
+.btn-write {
+    margin-top: 20px;
+    font-size: larger;
 }
 
-.bg-light,
-.badge-light {
-  border: #ccc solid 1px;
-}
 
-.round-img {
-  border-radius: 50%;
-}
 /* Forms */
 .form .form-group {
   margin: 1.2rem 0;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from "../../Components/Message"
 import Loader from '../../Components/Loader/Loader'
+import Sanitized from "../POST/Sanitized"
 
 import {
     getPost,
@@ -28,7 +29,10 @@ const PostDetails = ({ match }) => {
           ) : error ? (
             <Message variant='danger'>{error}</Message>
           ) : (
-            <h3>{post.title}</h3> 
+            <Sanitized html={post.sanitizedHtml} />
+            
+            
+            
           )}
         </>
     )

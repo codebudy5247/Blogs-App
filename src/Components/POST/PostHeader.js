@@ -14,7 +14,7 @@ const PostHeader = ({post}) => {
 
             <div className="card_name">
                 <h6 className="m-0">
-                trdtrdytr
+                {post.user.name}
                 </h6>
                 <big >
                     {moment(post.createdAt).fromNow()}

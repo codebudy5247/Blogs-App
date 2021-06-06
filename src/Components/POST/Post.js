@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Sanitized from "./Sanitized"
-import CardHeader from "./PostHeader"
+import moment from 'moment'
+import Avatar from "../Avatar"
+import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
+
 
 const Post = ({ post }) => {
   return (
@@ -10,13 +13,52 @@ const Post = ({ post }) => {
    
       <div className="post">
       
-      <CardHeader post={post} />
+     
+      <div className="card_header">
+      <div className="d-flex">
+          {/*<Avatar
+           src={post.user.avatar} 
+          size="big-avatar" />*/}
+
+          <div className="card_name">
+              <h6 className="m-0">
+              {post.creator}
+              </h6>
+              <big >
+                  {moment(post.createdAt).fromNow()}
+              </big>
+          </div>
+      </div>
+
+      <div className="nav-item dropdown">
+          <span id="moreLink" data-toggle="dropdown">
+           <MoreHorizOutlinedIcon />
+          </span>
+
+          <div className="dropdown-menu">
+             
+                  <>
+                      <div className="dropdown-item">
+                          <span className="material-icons">create</span> Edit Post
+                      </div>
+                      <div className="dropdown-item">
+                          <span className="material-icons">delete_outline</span> Remove Post
+                      </div>
+                  </>
+              
+
+              <div className="dropdown-item">
+                  <span className="material-icons">content_copy</span> Copy Link
+              </div>
+          </div>
+      </div>
+  </div>  
       
         {/*<span className="postDate">
           {new Date(post.createdAt).toDateString()}
   </span>*/}
         <Link to={`/post/${post._id}`} className="link">
-          <img className="postImg" src="https://res.cloudinary.com/practicaldev/image/fetch/s--KCRN0Wuf--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/356/ceb8dc0f-a77b-4f89-84da-52216a4286e1.png" alt="" />
+          <img className="postImg" src={post.selectedFile} alt="" />
         </Link>
         <div className="postInfo">
           <div className="postCats">
@@ -29,7 +71,7 @@ const Post = ({ post }) => {
 
         </div>
         <p className="postDesc">
-          <Sanitized html={post.message} />
+          <Sanitized html={post.sanitizedHtml} />
         </p>
       </div>
       
