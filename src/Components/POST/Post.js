@@ -13,16 +13,16 @@ const Post = ({ post }) => {
    
       <div className="post">
       
-     
+     {/*  Post Header */}
       <div className="card_header">
       <div className="d-flex">
           {/*<Avatar
-           src={post.user.avatar} 
+           src={post.creator.avatar} 
           size="big-avatar" />*/}
 
           <div className="card_name">
               <h6 className="m-0">
-              {post.creator}
+              
               </h6>
               <big >
                   {moment(post.createdAt).fromNow()}
@@ -53,10 +53,7 @@ const Post = ({ post }) => {
           </div>
       </div>
   </div>  
-      
-        {/*<span className="postDate">
-          {new Date(post.createdAt).toDateString()}
-  </span>*/}
+         {/* Post Body */}
         <Link to={`/post/${post._id}`} className="link">
           <img className="postImg" src={post.selectedFile} alt="" />
         </Link>
@@ -73,6 +70,10 @@ const Post = ({ post }) => {
         <p className="postDesc">
           <Sanitized html={post.sanitizedHtml} />
         </p>
+
+
+        {/*  Post Footer */}
+
       </div>
       
       
