@@ -7,6 +7,9 @@ import {
 } from "./theme.reducer"
 
 import {
+  alertReducer
+} from "./alertReducer"
+import {
   postListReducer,
   postDetailsReducer,
   postCreateReducer,
@@ -14,6 +17,7 @@ import {
 } from "./post.reducer";
 
 export const reducers = combineReducers({
+  alert:alertReducer,
   theme:themeReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,

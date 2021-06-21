@@ -10,6 +10,8 @@ import {
  
  
 } from "../Actions/types.action";
+import { GLOBALTYPES } from './globalTypes'
+
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -36,6 +38,12 @@ export const login = (email, password) => async (dispatch) => {
     });
 
     localStorage.setItem("userInfo", JSON.stringify(data));
+    dispatch({ 
+      type: GLOBALTYPES.ALERT, 
+      payload: {
+          success: data.msg
+      } 
+  })
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAIL,
@@ -44,6 +52,7 @@ export const login = (email, password) => async (dispatch) => {
           ? error.response.data.message
           : error.message,
      });
+     
     console.log(error);
   }
 };
@@ -85,6 +94,12 @@ export const register = (name, email,password) => async (dispatch) => {
     });
 
     localStorage.setItem("userInfo", JSON.stringify(data));
+    dispatch({ 
+      type: GLOBALTYPES.ALERT, 
+      payload: {
+          success: data.msg
+      } 
+  })
   } catch (error) {
     dispatch({
       type: USER_REGISTER_FAIL,

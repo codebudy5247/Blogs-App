@@ -31,7 +31,7 @@ const PostDetails = ({ match }) => {
             <Message variant='danger'>{error}</Message>
           ) : (
             <>
-            {/*<Sanitized html={post.sanitizedHtml} />*/}
+            
             <div className="singlePost">
       <div className="singlePostWrapper">
         <img
@@ -72,7 +72,7 @@ const PostDetails = ({ match }) => {
             
           )}
 
-          
+          {/*  Post Footer */}
         </>
     )
 }

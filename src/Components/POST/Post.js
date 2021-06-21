@@ -72,7 +72,7 @@ const Post = ({ post }) => {
         </p>
 
 
-        {/*  Post Footer */}
+        
 
       </div>
       
